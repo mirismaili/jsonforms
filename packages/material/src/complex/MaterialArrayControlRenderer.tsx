@@ -42,7 +42,7 @@ export const MaterialArrayControlRenderer = (props: ArrayLayoutProps) => {
   }, [setOpen, setPath, setRowData]);
   const deleteCancel = useCallback(() => setOpen(false), [setOpen]);
   const deleteConfirm = useCallback(() => {
-    const parentPath = path;
+    const parentPath = [...path];
     parentPath.pop();
     removeItems(parentPath, [rowData])();
     setOpen(false);
